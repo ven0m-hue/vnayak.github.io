@@ -3,3 +3,16 @@ description: "Controls Engineer | Robotics | UAV Systems"
 theme: jekyll-theme-minimal
 author: Fauxx
 
+
+# Navigation links
+navigation:
+  - title: "Home"
+    url: /
+  - title: "About"
+    url: /about
+  - title: "Projects"
+    url: /projects
+  - title: "Contact"
+    url: /contact
+  - title: "Resume"
+    url: /resume
