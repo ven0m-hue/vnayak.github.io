@@ -1,8 +1,6 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
-#remote_theme: "jekyll/minima@1e8a445"
-
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -16,9 +14,6 @@ permissions:
   contents: read
   pages: write
   id-token: write
-
-# _config.yml
-theme: jekyll-theme-minimal
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
