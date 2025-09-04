@@ -1,6 +1,6 @@
 title: Fauxx Portfolio
 description: "Controls Engineer | Robotics | UAV Systems"
-remote_theme: "jekyll/minima@1e8a445"
+theme: jekyll-theme-cayman
 
 author: Fauxx
 
