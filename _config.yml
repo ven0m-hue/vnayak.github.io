@@ -10,9 +10,6 @@ email: your-email@example.com
 navbar-links:
   About Me: "/aboutme/"
   Projects: "/projects/"
-  Blog: "/blog/"
-  Resume: "/resume/"
-  Contact: "/contact/"
 
 # Footer text
 footer: "© 2025 Fauxxx"
