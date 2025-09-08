@@ -1,22 +1,23 @@
 title: "Fauxxx’s Portfolio"
-email: your-email@example.com
-description: >-
-  Controls Engineer | Robotics | UAVs | AI & Controls
-baseurl: "" # leave empty for user.github.io
+description: "Controls Engineer | Robotics | UAVs | AI & Controls"
 url: "https://ven0m-hue.github.io"
+baseurl: "" # keep empty for username.github.io site
 
-theme: minima
-markdown: kramdown
-paginate: 5
-paginate_path: "/blog/page:num/"
+author: Fauxxx
+email: your-email@example.com
 
+# Navbar links
+navbar-links:
+  About Me: "about"
+  Projects: "projects"
+  Blog: "blog"
+  Resume: "resume"
+  Contact: "contact"
+
+# Footer text
+footer: "© 2025 Fauxxx"
+
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-paginate
-
-# Navigation links
-header_pages:
-  - about.md
-  - projects.md
-  - contact.md
-  - resume.md

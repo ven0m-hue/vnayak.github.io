@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# Exit on error
+set -e
+
+echo "🚀 Starting migration to Beautiful Jekyll..."
+
+# Step 1: Backup current repo
+BACKUP_DIR="../vnayak_backup_$(date +%Y%m%d_%H%M%S)"
+echo "📦 Backing up current repo to $BACKUP_DIR"
+mkdir -p "$BACKUP_DIR"
+cp -r . "$BACKUP_DIR"
+
+# Step 2: Remove old theme references
+echo "🧹 Cleaning up old minima references"
+sed -i '/theme: minima/d' _config.yml || true
+sed -i '/header_pages:/,/^[^ ]/d' _config.yml || true
+sed -i '/paginate:/d' _config.yml || true
+sed -i '/paginate_path:/d' _config.yml || true
+
+# Step 3: Download Beautiful Jekyll theme files
+echo "⬇️ Downloading Beautiful Jekyll theme..."
+git clone --depth=1 https://github.com/daattali/beautiful-jekyll tmp_theme
+
+# Copy only theme files into current repo
+rsync -av --ignore-existing tmp_theme/ . \
+  --exclude=.git \
+  --exclude=README.md \
+  --exclude=LICENSE \
+  --exclude=CNAME
+
+# Cleanup
+rm -rf tmp_theme
+
+# Step 4: Replace _config.yml with portfolio-ready config
+echo "📝 Writing new _config.yml"
+cat > _config.yml << 'EOF'
+title: "Fauxxx’s Portfolio"
+description: "Controls Engineer | Robotics | UAVs | AI & Controls"
+url: "https://ven0m-hue.github.io"
+baseurl: "" # keep empty for username.github.io site
+
+author: Fauxxx
+email: your-email@example.com
+
+# Navbar links
+navbar-links:
+  About Me: "about"
+  Projects: "projects"
+  Blog: "blog"
+  Resume: "resume"
+  Contact: "contact"
+
+# Footer text
+footer: "© 2025 Fauxxx"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+EOF
+
+echo "✅ Migration complete!"
+echo "👉 Next steps:"
+echo "1. Commit and push: git add . && git commit -m 'Migrated to Beautiful Jekyll' && git push"
+echo "2. Open https://ven0m-hue.github.io to check your new theme."
