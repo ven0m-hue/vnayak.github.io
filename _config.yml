@@ -1,15 +1,19 @@
 title: "Fauxxx’s Portfolio"
 description: "Controls Engineer | Robotics | UAVs | AI & Controls"
 url: "https://ven0m-hue.github.io"
-baseurl: "" # keep empty for username.github.io site
+baseurl: "/vnayak.github.io"
 
 author: Fauxxx
 email: your-email@example.com
 
 # Navbar links
 navbar-links:
-  About Me: "/aboutme/"
-  Projects: "/projects/"
+  About Me: "/vnayak.github.io/about/"
+  Projects: "/vnayak.github.io/projects/"
+  Blog: "/vnayak.github.io/blog/"
+  Resume: "/vnayak.github.io/resume/"
+  Contact: "/vnayak.github.io/contact/"
+
 
 # Footer text
 footer: "© 2025 Fauxxx"
