@@ -8,11 +8,11 @@ email: your-email@example.com
 
 # Navbar links
 navbar-links:
-  About Me: "/vnayak.github.io/about/"
-  Projects: "/vnayak.github.io/projects/"
-  Blog: "/vnayak.github.io/blog/"
-  Resume: "/vnayak.github.io/resume/"
-  Contact: "/vnayak.github.io/contact/"
+  About Me: "/about/"
+  Projects: "/projects/"
+  Blog: "/blog/"
+  Resume: "/resume/"
+  Contact: "/contact/"
 
 
 # Footer text
