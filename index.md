@@ -1,12 +1,12 @@
 ---
-layout: default
+layout: home
 title: Home
 ---
 
-# Hi, I’m Fauxx 👋
-Welcome to my portfolio. I work on UAVs, robotics, and controls.
+Welcome to my portfolio and blog!  
+I write about **controls, robotics, UAVs, and embedded systems**.  
 
-## Projects
-- [VTOL UAV](#) – Cascaded PID & state observers
-- [Autonomous Forklift](#) – Optimization-based pallet tracking
-
+- 👉 [About Me](about)  
+- 🚀 [Projects](projects)  
+- ✉️ [Contact](contact)  
+- 📄 [Resume](resume)  

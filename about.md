@@ -1,7 +1,8 @@
 ---
-layout: default
-title: about
+layout: page
+title: About
+permalink: /about/
 ---
 
-# about.md
-Content for about page goes here.
+# About Me
+Hi, I’m Fauxxx — a Controls Engineer passionate about robotics, UAVs, and safe autonomous systems.

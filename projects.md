@@ -1,7 +1,10 @@
 ---
-layout: default
-title: projects
+layout: page
+title: Projects
+permalink: /projects/
 ---
 
-# projects.md
-Content for projects page goes here.
+# Projects
+- 🚁 UAV Payload Delivery System @ Redwing  
+- 🤖 Lateral Control for Autonomous Forklifts @ Flux Auto  
+- 🛫 VTOL Pad with Thrust Vector Control  

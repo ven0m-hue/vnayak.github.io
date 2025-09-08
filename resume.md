@@ -1,7 +1,8 @@
 ---
-layout: default
-title: resume
+layout: page
+title: Resume
+permalink: /resume/
 ---
 
-# resume.md
-Content for resume page goes here.
+# Resume
+[Download my Resume (PDF)](assets/Fauxxx_Resume.pdf)
