@@ -1,5 +1,9 @@
 <header class="navbar">
-  <nav>
+  <div class="navbar-left">
+    <a href="{{ site.baseurl }}/" class="site-title">Fauxxx Portfolio</a>
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  </div>
+  <nav class="navbar-right">
     <ul>
       <li><a href="{{ site.baseurl }}/about/">About</a></li>
       <li><a href="{{ site.baseurl }}/projects/">Projects</a></li>
@@ -8,5 +12,4 @@
       <li><a href="{{ site.baseurl }}/contact/">Contact</a></li>
     </ul>
   </nav>
-  <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
 </header>
