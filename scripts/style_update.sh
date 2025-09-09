@@ -1,14 +1,62 @@
 #!/bin/bash
 
-# Paths
-CSS_FILE="assets/css/style.scss"
-JS_FILE="assets/js/theme-toggle.js"
-HEADER_FILE="_includes/header.html"
+set -e
 
-echo "🔧 Updating styles..."
-cat >>"$CSS_FILE" <<'EOF'
+echo "Updating Fauxxx Portfolio theme..."
 
-/* Navbar fix */
+# Ensure directories
+mkdir -p _includes assets/css assets/js
+
+# Write header.html
+cat >_includes/header.html <<'EOF'
+<nav class="navbar">
+  <div class="navbar-left">
+    <a href="{{ '/' | relative_url }}" class="site-title">Fauxxx's Portfolio</a>
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  </div>
+  <ul class="nav-links">
+    <li><a href="{{ '/about/' | relative_url }}">About Me</a></li>
+    <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+    <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+    <li><a href="{{ '/resume/' | relative_url }}">Resume</a></li>
+    <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+  </ul>
+</nav>
+EOF
+
+# Write style.css
+cat >assets/css/style.css <<'EOF'
+/* Root theme variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --link-color: #007bff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding-top: 60px; /* space for navbar */
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode overrides */
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --link-color: #66aaff;
+}
+
+/* Navbar styles */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -19,59 +67,67 @@ cat >>"$CSS_FILE" <<'EOF'
   left: 0;
   right: 0;
   z-index: 1030;
-  background-color: var(--bg-color, #fff);
+  background-color: var(--bg-color);
+  border-bottom: 1px solid #ddd;
 }
 
-body {
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
   margin: 0;
-  padding-top: 60px;
+  padding: 0;
 }
 
-body.dark-mode {
-  --bg-color: #121212;
-  --text-color: #f5f5f5;
+.nav-links a {
+  color: var(--text-color);
+  font-weight: 600;
 }
 
-body {
-  background-color: var(--bg-color, #fff);
-  color: var(--text-color, #000);
+#theme-toggle {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 EOF
 
-echo "📄 Writing JS toggle..."
-mkdir -p assets/js
-cat >"$JS_FILE" <<'EOF'
-document.addEventListener("DOMContentLoaded", function () {
-  const toggle = document.getElementById("theme-toggle");
-  const body = document.body;
+# Write JS
+cat >assets/js/theme-toggle.js <<'EOF'
+(function() {
+  const toggleBtn = document.getElementById("theme-toggle");
+  if (!toggleBtn) return;
 
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark-mode"); }
+  // Apply saved mode
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    toggleBtn.textContent = "☀️";
+  }
 
-  toggle.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-    localStorage.setItem(
-      "theme",
-      body.classList.contains("dark-mode") ? "dark" : "light"
-    );
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+      toggleBtn.textContent = "☀️";
+    } else {
+      localStorage.setItem("theme", "light");
+      toggleBtn.textContent = "🌙";
+    }
   });
-});
+})();
 EOF
 
-echo "📝 Updating header..."
-cat >"$HEADER_FILE" <<'EOF'
-<header class="navbar">
-  <nav>
-    <ul>
-      <li><a href="{{ site.baseurl }}/about/">About</a></li>
-      <li><a href="{{ site.baseurl }}/projects/">Projects</a></li>
-      <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
-      <li><a href="{{ site.baseurl }}/resume/">Resume</a></li>
-      <li><a href="{{ site.baseurl }}/contact/">Contact</a></li>
-    </ul>
-  </nav>
-  <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-</header>
-EOF
-
-echo "✅ Done! Run 'bundle exec jekyll serve' and check locally."
+echo "✅ Update complete! Now run: bundle exec jekyll serve"

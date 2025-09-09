@@ -1,13 +1,13 @@
-<header class="navbar">
+<nav class="navbar">
   <div class="navbar-left">
-    <a href="{{ site.baseurl }}/" class="site-title">{{ site.title }}</a>
+    <a href="{{ '/' | relative_url }}" class="site-title">Fauxxx's Portfolio</a>
     <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </div>
-  <nav class="navbar-right">
-    <ul>
-      {% for link in site.navbar-links %}
-        <li><a href="{{ site.baseurl }}/{{ link[1] }}">{{ link[0] }}</a></li>
-      {% endfor %}
-    </ul>
-  </nav>
-</header>
+  <ul class="nav-links">
+    <li><a href="{{ '/about/' | relative_url }}">About Me</a></li>
+    <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+    <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+    <li><a href="{{ '/resume/' | relative_url }}">Resume</a></li>
+    <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+  </ul>
+</nav>
