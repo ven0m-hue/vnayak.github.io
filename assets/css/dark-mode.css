@@ -1,0 +1,24 @@
+/* Dark mode overrides */
+body.dark-mode { background-color: #121212; color: #e0e0e0; }
+body.dark-mode h1,h2,h3,h4,h5,h6 { color: #fff; }
+body.dark-mode a { color: #90caf9; } 
+body.dark-mode a:hover { color: #bbdefb; }
+.navbar.dark-mode, body.dark-mode .navbar { background-color: #1f1f1f !important; }
+body.dark-mode .navbar a { color: #e0e0e0 !important; }
+body.dark-mode .navbar a:hover { color: #fff !important; }
+footer.dark-mode, body.dark-mode footer { background-color: #1f1f1f; color: #aaa; }
+body.dark-mode pre, body.dark-mode code { background-color: #1e1e1e; color: #c5c8c6; border-radius: 5px; }
+body.dark-mode pre { padding: 10px; overflow-x: auto; }
+body.dark-mode code { padding: 2px 4px; }
+body.dark-mode .card, body.dark-mode .post { background-color: #1a1a1a; border: 1px solid #333; color: #ddd; }
+body.dark-mode .post-preview { background-color: #1a1a1a; border: 1px solid #333; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+body.dark-mode .post-preview a { color: #90caf9; } 
+body.dark-mode .post-preview a:hover { color: #bbdefb; }
+body.dark-mode .post-title, body.dark-mode .post-subtitle { color: #fff; }
+body.dark-mode .post-meta { color: #bbb; }
+body.dark-mode .post-content { color: #e0e0e0; line-height: 1.7; }
+body.dark-mode .post-content h2, body.dark-mode .post-content h3 { color: #fff; }
+body.dark-mode blockquote { border-left: 4px solid #90caf9; color: #ccc; padding-left: 15px; font-style: italic; }
+#search-input { background-color: #1a1a1a; color: #eee; border: 1px solid #333; }
+#search-results li a { color: #90caf9; }
+#search-results li a:hover { color: #bbdefb; }
