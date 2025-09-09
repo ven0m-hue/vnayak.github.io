@@ -1,15 +1,13 @@
 <header class="navbar">
   <div class="navbar-left">
-    <a href="{{ site.baseurl }}/" class="site-title">Fauxxx Portfolio</a>
+    <a href="{{ site.baseurl }}/" class="site-title">{{ site.title }}</a>
     <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </div>
   <nav class="navbar-right">
     <ul>
-      <li><a href="{{ site.baseurl }}/about/">About</a></li>
-      <li><a href="{{ site.baseurl }}/projects/">Projects</a></li>
-      <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
-      <li><a href="{{ site.baseurl }}/resume/">Resume</a></li>
-      <li><a href="{{ site.baseurl }}/contact/">Contact</a></li>
+      {% for link in site.navbar-links %}
+        <li><a href="{{ site.baseurl }}/{{ link[1] }}">{{ link[0] }}</a></li>
+      {% endfor %}
     </ul>
   </nav>
 </header>
