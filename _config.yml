@@ -1,9 +1,23 @@
 title: "Fauxxx’s Portfolio"
 description: "Controls Engineer | Robotics | UAVs | AI & Controls"
 url: "https://ven0m-hue.github.io"
-baseurl: "/vnayak.github.io"
+baseurl: "" # leave empty for username.github.io
+
+theme: jekyll-dash
+
+plugins:
+  - jekyll-tagging
 
 author: Fauxxx
 email: your-email@example.com
 
-theme: jekyll-dash
+# Navbar links
+navbar-links:
+  About Me: "about"
+  Projects: "projects"
+  Blog: "blog"
+  Resume: "resume"
+  Contact: "contact"
+
+# Footer text
+footer: "© 2025 Fauxxx"

@@ -1,9 +1,0 @@
----
-layout: home
----
-<h2>Posts tagged "{{ page.tag }}"</h2>
-<ul class="post-list">
-{% for post in site.tags[page.tag] %}
-  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> — {{ post.date | date: "%b %-d, %Y" }}</li>
-{% endfor %}
-</ul>
