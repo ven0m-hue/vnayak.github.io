@@ -1,0 +1,21 @@
+<footer class="site-footer">
+  <div class="wrapper" style= "width=100%; padding: 0rem 0rem">
+
+  <p>© {{ site.author }}</p>
+  {% if site.dash.social_links %}
+    <div class="footer-social-links">
+      {% for social in site.dash.social_links %}
+        <a href="{{ social.url }}" style="color: {{ social.color }};">
+          <i class="fab fa-{{ social.icon }}"></i>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i>
+      {%- include theme-toggle.html -%}
+
+    </div>
+  </div>
+</footer>
+
+

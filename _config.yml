@@ -1,23 +1,50 @@
-title: "Fauxxx’s Portfolio"
-description: "Controls Engineer | Robotics | UAVs | AI & Controls"
-url: "https://ven0m-hue.github.io"
-baseurl: "" # leave empty for username.github.io
+title: Fauxxx's Portfolio
+description:
+url: https://vnayak.github.io
+baseurl: "/vnayak.github.io"
+
+author: Fauxxx
 
 theme: jekyll-dash
 
 plugins:
-  - jekyll-tagging
+  - jekyll-paginate
 
-author: Fauxxx
-email: your-email@example.com
+paginate: 5
+paginate_path: "/blog/page:num/"
 
-# Navbar links
-navbar-links:
-  About Me: "about"
-  Projects: "projects"
-  Blog: "blog"
-  Resume: "resume"
-  Contact: "contact"
+collections:
+  posts:
+    output: true
+permalink: /blog/:title/
 
-# Footer text
-footer: "© 2025 Fauxxx"
+nav_links:
+  - title: About
+    url: /about/
+  - title: Projects
+    url: /projects/
+  - title: Blog
+    url: /blog/
+  - title: Resume
+    url: /resume/
+  - title: Contact
+    url: /contact/
+
+dash:
+  theme_switcher: true
+  date_format: "%b %-d, %Y"
+  animation_speed: 50
+  rtl: false
+  disqus:
+    shortname: your-disqus-shortname
+  social_links:
+    - url: https://twitter.com/bitbrain_
+      icon: twitter-square
+      color: cyan
+    - url: https://bitbrain.itch.io
+      icon: itch-io
+      color: red
+    - url: https://github.com/bitbrain
+      icon: github-square
+      color: purple
+  show_author: false
