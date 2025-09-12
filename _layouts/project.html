@@ -1,0 +1,85 @@
+---
+layout: default
+---
+
+<div class="project-page">
+  {% unless site.dash.show_author == false %}
+    {% include author.html %}
+  {% endunless %}
+
+  <div class="project-header">
+    <h1 class="project-title">{{ page.title }}</h1>
+
+    {% if page.description %}
+    <noscript>
+      <div class="project-description">{{ page.description }}</div>
+    </noscript>
+    <div id="animated-project-description" class="project-description" style="display: none;"></div>
+    {% endif %}
+
+    {% if page.thumbnail %}
+      <div class="project-thumbnail">
+        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }}">
+      </div>
+    {% endif %}
+
+    {% if page.tags %}
+    <div class="project-tags">
+      {% for tag in page.tags %}
+      <a class="tag" href="{{ tag | tag_url }}">{{ tag }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="project-content">
+    {{ content }}
+  </div>
+
+</div>
+
+{% if site.dash.disqus.shortname and page.comments != false %}
+<div class="comments">
+  {% include disqus.html %}
+</div>
+{% endif %}
+
+{% include tagcloud.html %}
+
+<script>
+  // Animated description
+  let i = 0;
+  const text = '{{ page.description }}';
+  const speed = parseInt('{{ site.dash.animation_speed | default: 50 }}');
+
+  if (text) {
+    document.getElementById('animated-project-description').style.display = 'initial';
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById('animated-project-description').innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    typeWriter();
+  }
+
+  // Image modal
+  var $imgs = [];
+  $('img').each(function(idx) {
+    var obj = { src: $(this).attr('src') };
+    $imgs.push(obj);
+    var elem = $(this);
+    $(this).click(function() {
+      $('.modal').magnificPopup('open', idx);
+    });
+  });
+
+  $('.modal').magnificPopup({
+    items: $imgs,
+    type: 'image',
+    closeOnContentClick: true,
+    mainClass: 'mfp-img-mobile',
+    image: { verticalFit: true }
+  });
+</script>

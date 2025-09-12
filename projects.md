@@ -5,6 +5,12 @@ permalink: /projects/
 ---
 
 # Projects
-- 🚁 UAV Payload Delivery System @ Redwing  
-- 🤖 Lateral Control for Autonomous Forklifts @ Flux Auto  
-- 🛫 VTOL Pad with Thrust Vector Control  
+
+<ul>
+  {% for project in site.projects %}
+    <li>
+      <a href="{{ project.url | relative_url }}">{{ project.title }}</a><br>
+      {{ project.excerpt | strip_html | truncate: 150 }}
+    </li>
+  {% endfor %}
+</ul>

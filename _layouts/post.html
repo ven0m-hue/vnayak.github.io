@@ -52,7 +52,7 @@ layout: default
   let i = 0;
   const text = '{{ page.description }}';
   const speed = parseInt('{{ animation_speed }}');
-  
+
   function typeWriter() {
     if (i < text.length) {
       document.getElementById('animated-post-description').innerHTML += text.charAt(i);
@@ -85,6 +85,6 @@ layout: default
     image: {
       verticalFit: true
     }
-    
+
   });
 </script>

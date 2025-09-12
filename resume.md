@@ -5,4 +5,6 @@ permalink: /resume/
 ---
 
 # Resume
-[Download my Resume (PDF)](assets/Fauxxx_Resume.pdf)
+<li>
+  <a href="{{ '/assets/Fauxxx_Resume.pdf' | relative_url }}" download>Resume</a>
+</li>

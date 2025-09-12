@@ -1,14 +1,16 @@
 title: Fauxxx's Portfolio
 description:
-url: https://vnayak.github.io
+url: "https://ven0m-hue.github.io"
 baseurl: "/vnayak.github.io"
 
 author: Fauxxx
 
-theme: jekyll-dash
-
 plugins:
   - jekyll-paginate
+  - jekyll-feed
+
+include:
+  - assets/Fauxxx_Resume.pdf
 
 paginate: 5
 paginate_path: "/blog/page:num/"
@@ -16,6 +18,9 @@ paginate_path: "/blog/page:num/"
 collections:
   posts:
     output: true
+  projects:
+    output: true
+
 permalink: /blog/:title/
 
 nav_links:
@@ -37,14 +42,15 @@ dash:
   rtl: false
   disqus:
     shortname: your-disqus-shortname
+
   social_links:
-    - url: https://twitter.com/bitbrain_
-      icon: twitter-square
+    - url: https://x.com//some_random_dude
+      icon: x
       color: cyan
-    - url: https://bitbrain.itch.io
-      icon: itch-io
-      color: red
-    - url: https://github.com/bitbrain
+    - url: https://github.com/ven0m-hue
       icon: github-square
       color: purple
+    - url: https://linkedin.com/venkatesh_nayak/
+      icon: linkedin
+      color: blue
   show_author: false
